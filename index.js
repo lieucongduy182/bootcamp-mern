@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const authRouter = require('./routes/auth')
+const taskRouter = require('./routes/task')
 
 // connect DB mongoose
 const connectDB = async () => {
@@ -26,7 +27,9 @@ const port = process.env.PORT;
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use('/api/auth', authRouter)
+app.use('/api/tasks', taskRouter)
 
 app.listen(port, function () {
     console.log(`Server start listening on http://localhost:${port}`)

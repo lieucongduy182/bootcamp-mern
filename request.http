@@ -2,7 +2,7 @@ POST http://localhost:3000/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "dlieu1",
+    "username": "dlieu2",
     "password": "123456"
 }
 
@@ -15,3 +15,35 @@ Content-Type: application/json
     "username": "dlieu1",
     "password": "123456"
 }
+
+###
+
+POST http://localhost:3000/api/tasks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzI1OWRlNWFkM2MyM2RmYmQyNzZjNWUiLCJpYXQiOjE2NjM1NjI1Nzl9.2eX2f-TfFrFA9cTBiAFEH9jur3E-c7f5hyH6gkXUQlQ
+
+{
+    "title": "Task example",
+    "description": "improve skills fullstack",
+    "url": "facebook.com",
+    "status": "COMPLETED"
+}
+
+### GET TASKS
+GET http://localhost:3000/api/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzI1OWRlNWFkM2MyM2RmYmQyNzZjNWUiLCJpYXQiOjE2NjM1NjQxMzB9.pOeOSNBi25IQpMLzMiAdkpyxBGG6I_gKvSOfbwivKcY
+### PUT TASK
+PUT http://localhost:3000/api/tasks/6327ef7d2b6e29ad62f5b2a3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzI3ZWRlMWEwZTdiNGQ2NzdjOGI4YWQiLCJpYXQiOjE2NjM1NjI3NDd9.M5IohkhEB-BkwR58eDqXUT2_-7uRwZ1J5Zpo1bfIiks
+
+{
+    "title": "Learn VUEJS and RESTAPI",
+    "description": "VUEJS skill and RESTful API",
+    "url": "https://vuejs.org",
+    "status": "LEARNING"
+}
+
+### DELETE TASK
+DELETE http://localhost:3000/api/tasks/6327f38f4755531cb74ecadc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzI1OWRlNWFkM2MyM2RmYmQyNzZjNWUiLCJpYXQiOjE2NjM1NjQxMzB9.pOeOSNBi25IQpMLzMiAdkpyxBGG6I_gKvSOfbwivKcY
